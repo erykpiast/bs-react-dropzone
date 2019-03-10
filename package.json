@@ -1,0 +1,50 @@
+{
+  "name": "bs-react-dropzone",
+  "version": "0.1.0",
+  "description": "ReasonML bindings for react-dropzone library",
+  "main": "src/ReactDropzone.re",
+  "files": [
+    "src/*.re",
+    "src/*.ml",
+    "bsconfig.json"
+  ],
+  "scripts": {
+    "build": "bsb -make-world",
+    "clean": "bsb -clean-world",
+    "prepublish": "yarn run clean && yarn run build",
+    "pretest": "yarn run build",
+    "start": "bsb -make-world -w",
+    "test": "TEST=true jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erykpiast/bs-react-dropzone.git"
+  },
+  "keywords": [
+    "reason",
+    "bucklescript",
+    "bindings",
+    "react",
+    "dropzone"
+  ],
+  "author": "Eryk Napierała",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/erykpiast/bs-react-dropzone/issues"
+  },
+  "homepage": "https://github.com/erykpiast/bs-react-dropzone#readme",
+  "peerDependencies": {
+    "react-dropzone": "10.x.x",
+    "reason-react": "0.5.x"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "7.3.4",
+    "@glennsl/bs-jest": "0.4.8",
+    "babel-jest": "24.3.1",
+    "bs-platform": "4.0.18",
+    "bs-react-test-renderer": "2.0.0",
+    "jest": "24.3.1",
+    "react-dropzone": "10.0.0",
+    "reason-react": "0.5.3"
+  }
+}
