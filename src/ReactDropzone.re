@@ -70,6 +70,7 @@ module GetInputProps = {
     type js = {
       [@bs.as "type"] type_: string,
       autoComplete: string,
+      multiple: bool,
       onChange: onChange,
       onClick: onClick,
       tabIndex: int,
@@ -80,6 +81,7 @@ module GetInputProps = {
     type t = {
       type_: string,
       autoComplete: string,
+      multiple: bool,
       onChange: onChange,
       onClick: onClick,
       tabIndex: int,
@@ -90,6 +92,7 @@ module GetInputProps = {
     let make = (js) => {
       type_: js->type_Get,
       autoComplete: js->autoCompleteGet,
+      multiple: js->multipleGet,
       onChange: js->onChangeGet,
       onClick: js->onClickGet,
       tabIndex: js->tabIndexGet,
