@@ -38,7 +38,7 @@ type props = {
   [@bs.optional] onDragLeave: onDragLeave,
   [@bs.optional] onDragOver: onDragOver,
   [@bs.optional] onDragStart: onDragStart,
-  [@bs.optional] onDrop: (array(file), array(file)) => unit,
+  [@bs.optional] onDrop: (array(FileReader.File.t), array(FileReader.File.t)) => unit,
   [@bs.optional] onDropAccepted: ReactEvent.Mouse.t => unit,
   [@bs.optional] onDropRejected: ReactEvent.Mouse.t => unit,
   [@bs.optional] onFileDialogCancel: ReactEvent.Mouse.t => unit,
@@ -249,9 +249,9 @@ module Children = {
       isDragAccept: bool,
       isDragReject: bool,
       isFocused: bool,
-      acceptedFiles: array(file),
-      rejectedFiles: array(file),
-      draggedFiles: array(file)
+      acceptedFiles: array(FileReader.File.t),
+      rejectedFiles: array(FileReader.File.t),
+      draggedFiles: array(FileReader.File.t)
     };
 
     type t = {
@@ -262,9 +262,9 @@ module Children = {
       isDragAccept: bool,
       isDragReject: bool,
       isFocused: bool,
-      acceptedFiles: array(file),
-      rejectedFiles: array(file),
-      draggedFiles: array(file),
+      acceptedFiles: array(FileReader.File.t),
+      rejectedFiles: array(FileReader.File.t),
+      draggedFiles: array(FileReader.File.t),
     };
 
     let make = (js) => {

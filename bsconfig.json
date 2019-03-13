@@ -11,7 +11,10 @@
     "in-source": true
   }],
   "suffix": ".bs.js",
-  "bs-dependencies": ["reason-react"],
+  "bs-dependencies": [
+    "reason-react",
+    "@zpnester/bs-filereader"
+  ],
   "bs-dev-dependencies": [
     "@glennsl/bs-jest",
     "bs-react-test-renderer"
