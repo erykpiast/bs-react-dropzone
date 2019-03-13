@@ -1,4 +1,7 @@
 # bs-react-dropzone
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/erykpiast/bs-react-dropzone.svg)](https://greenkeeper.io/)
+
 ReasonML bindings for [react-dropzone](https://github.com/react-dropzone/react-dropzone) library.
 
 ## Installation
