@@ -1,3 +1,22 @@
 language: node_js
 node_js:
-  - "11"
+- '11'
+before_deploy: |
+  function npm_tag() {
+    BRANCH=$(git branch | grep \* | cut -d ' ' -f2);
+    if [[ "$BRANCH" == "master" ]]; then
+      echo "stable";
+    else
+      echo "beta";
+    fi
+  }
+deploy:
+  provider: npm
+  tag: $(npm_tag)
+  email: eryk.piast@gmail.com
+  api_key:
+    secure: CzMzQCVh4e8SvbayO8NOuYyABo1mCwzIeLkHDH17lkRtZUDC454QT7XiMRBlg69m/wBJ/o6NIDB9WTRfvKv4jfX6wmclLQzuA0eD9ZJDNn12lrtVwK8OGZzzlBvurlrjs2xIj5/A69HPjUQxdT7r9en492Ul62WytHDjOomlg3S76cEbeELHELFhq0he0yNXDdQUn1TjH6uTBckCIpSU6M9Asz33l19MrrZxo2u3ctAmhxedCtC5MIX6mcyZz6YlUd5cNjhJdM+GY5L4nCU4y7pC+0f5mGGuAtN/MgdoESb/zQqb9DetWr12Y0CVApM6RgmZlm3VHmK24ySCNPSazUu5FXwgZp3a8+6XuBrcDK1kPSi+l8RIKj+GQ7M2Aq3Jk+HZ63NqkfJh3x5dPpib7pkWsR6njGhjLGivRwyV96bs3VtZ4ee8EhK72kI6DbykMFwb5mQ1fhLroVJvcxDkvxYIB1uUPnipU8NyjACpjZu9RVAwjX/5Ed2rmmfmxw9YWvU1vmMPOzXUs8tNhDDKTSXwRNKj/k3I2sZ0V0ObjJKxii3Az/0dR5Mz2J/7CbO7lfmENP/DS5HKKX1L7XQXdiphCT3bIms56+0V37ArBRN0dnQUR+1uNYAP2kMkfAJcfiHAShIR4CbZBY34t2UKdRrNh34hU+nDelf4wAu5TUg=
+  on:
+    all_branches: true
+    tags: true
+    repo: erykpiast/bs-react-dropzone
