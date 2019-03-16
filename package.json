@@ -49,6 +49,6 @@
     "reason-react": "0.6.0"
   },
   "dependencies": {
-    "@zpnester/bs-filereader": "0.2.2"
+    "@zpnester/bs-filereader": "0.2.3"
   }
 }
