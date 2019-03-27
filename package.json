@@ -46,7 +46,7 @@
     "bs-platform": "4.0.18",
     "enzyme-adapter-react-16": "1.11.2",
     "jest": "24.5.0",
-    "react-dropzone": "10.0.3",
+    "react-dropzone": "10.0.5",
     "reason-react": "0.6.0",
     "standard-version": "5.0.2"
   },
