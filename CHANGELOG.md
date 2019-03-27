@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.3.1](https://github.com/erykpiast/bs-react-dropzone/compare/v0.3.0...v0.3.1) (2019-03-27)
+
+
+### Bug Fixes
+
+* **package:** update @zpnester/bs-filereader to version 0.2.5 ([cf16533](https://github.com/erykpiast/bs-react-dropzone/commit/cf16533))
+
+
+
 # 0.3.0 (2019-03-16)
 
 
