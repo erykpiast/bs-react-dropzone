@@ -11,8 +11,8 @@
   "scripts": {
     "build": "bsb -make-world",
     "clean": "bsb -clean-world",
-    "prepublish": "yarn run clean && yarn run build",
-    "pretest": "yarn run build",
+    "prepublish": "npm run clean && npm run build",
+    "pretest": "npm run build",
     "start": "bsb -make-world -w",
     "test": "TEST=true jest",
     "release": "standard-version"
@@ -36,16 +36,16 @@
   "homepage": "https://github.com/erykpiast/bs-react-dropzone#readme",
   "peerDependencies": {
     "react-dropzone": "10.x.x",
-    "reason-react": "0.5.x"
+    "reason-react": "0.7.x"
   },
   "devDependencies": {
-    "@babel/preset-env": "7.5.0",
+    "@babel/preset-env": "7.5.5",
     "@glennsl/bs-jest": "0.4.8",
-    "babel-jest": "24.5.0",
+    "babel-jest": "24.8.0",
     "bs-enzyme": "erykpiast/bs-enzyme#1b543e6",
-    "bs-platform": "5.0.4",
+    "bs-platform": "5.0.6",
     "enzyme-adapter-react-16": "1.14.0",
-    "jest": "24.5.0",
+    "jest": "24.8.0",
     "react-dropzone": "10.1.5",
     "reason-react": "0.7.0",
     "standard-version": "6.0.1"
