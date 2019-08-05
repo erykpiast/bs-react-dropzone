@@ -40,7 +40,7 @@
   },
   "devDependencies": {
     "@babel/preset-env": "7.5.5",
-    "@glennsl/bs-jest": "0.4.8",
+    "@glennsl/bs-jest": "0.4.9",
     "babel-jest": "24.8.0",
     "bs-enzyme": "erykpiast/bs-enzyme#1b543e6",
     "bs-platform": "5.0.6",
