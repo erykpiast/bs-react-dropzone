@@ -51,6 +51,6 @@
     "standard-version": "7.0.0"
   },
   "dependencies": {
-    "@zpnester/bs-filereader": "0.3.0"
+    "@zpnester/bs-filereader": "0.4.0"
   }
 }
