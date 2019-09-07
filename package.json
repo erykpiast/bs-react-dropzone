@@ -39,7 +39,7 @@
     "reason-react": "0.7.x"
   },
   "devDependencies": {
-    "@babel/preset-env": "7.5.5",
+    "@babel/preset-env": "7.6.0",
     "@glennsl/bs-jest": "0.4.9",
     "babel-jest": "24.8.0",
     "bs-enzyme": "erykpiast/bs-enzyme#1b543e6",
