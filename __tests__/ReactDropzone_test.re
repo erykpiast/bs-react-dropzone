@@ -11,7 +11,7 @@ let renderReason = () => (
    */
   <div>
     <ReactDropzone>
-    ...((_) => ReasonReact.null)
+    {(_) => ReasonReact.null}
     </ReactDropzone>
   </div>
 ) |> Enzyme.shallow |> Enzyme.Shallow.childAt(0);
