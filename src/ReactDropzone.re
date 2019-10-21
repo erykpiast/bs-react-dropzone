@@ -335,3 +335,57 @@ let makeProps = (
   ~preventDropOnDocument?,
   ~children=Children.make(children)
 );
+
+module Jsx2 = {
+  let component = ReasonReact.statelessComponent(__MODULE__);
+
+  let make =
+    (
+      ~accept=?,
+      ~disabled=?,
+      ~maxSize=?,
+      ~minSize=?,
+      ~multiple=?,
+      ~name=?,
+      ~onBlur=?,
+      ~onClick=?,
+      ~onDragEnter=?,
+      ~onDragLeave=?,
+      ~onDragOver=?,
+      ~onDragStart=?,
+      ~onDrop=?,
+      ~onDropAccepted=?,
+      ~onDropRejected=?,
+      ~onFileDialogCancel=?,
+      ~onFocus=?,
+      ~onKeyDown=?,
+      ~preventDropOnDocument=?,
+      children,
+    ) => ReasonReactCompat.wrapReactForReasonReact(
+      make,
+      makeProps(
+        ~accept?,
+        ~disabled?,
+        ~maxSize?,
+        ~minSize?,
+        ~multiple?,
+        ~name?,
+        ~onBlur?,
+        ~onClick?,
+        ~onDragEnter?,
+        ~onDragLeave?,
+        ~onDragOver?,
+        ~onDragStart?,
+        ~onDrop?,
+        ~onDropAccepted?,
+        ~onDropRejected?,
+        ~onFileDialogCancel?,
+        ~onFocus?,
+        ~onKeyDown?,
+        ~preventDropOnDocument?,
+        ~children,
+        (),
+      ),
+      children,
+    );
+};
