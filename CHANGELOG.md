@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.5.0-1](https://github.com/erykpiast/bs-react-dropzone/compare/v0.4.2...v0.5.0-1) (2019-10-22)
+
+
+### Bug Fixes
+
+* **package:** update @zpnester/bs-filereader to version 0.4.0 ([4a0af97](https://github.com/erykpiast/bs-react-dropzone/commit/4a0af97))
+
+
+### Features
+
+* **api:** add JSX2 fallback ([49580a0](https://github.com/erykpiast/bs-react-dropzone/commit/49580a0))
+
+
+### refactor
+
+* **api:** Migrate to JSX 3 ([e91bdf5](https://github.com/erykpiast/bs-react-dropzone/commit/e91bdf5))
+
+
+### BREAKING CHANGES
+
+* **api:** it's not gonna work with JSX 2 anymore
+
+
+
 ## [0.5.0-0](https://github.com/erykpiast/bs-react-dropzone/compare/v0.4.2...v0.5.0-0) (2019-10-21)
 
 
