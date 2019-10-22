@@ -1,7 +1,5 @@
 open Utils.Function;
 
-[@bs.module "react-dropzone"] external reactClass: ReasonReact.reactClass = "default";
-
 type accept =
   | Single(string)
   | Multi(array(string));
@@ -23,29 +21,6 @@ type onDragEnter = ReactEvent.Mouse.t => unit;
 type onDragOver = ReactEvent.Mouse.t => unit;
 type onDragLeave = ReactEvent.Mouse.t => unit;
 type ref = Js.nullable(Dom.element) => unit;
-
-[@bs.deriving abstract]
-type props = {
-  [@bs.optional] accept: accept,
-  [@bs.optional] disabled: bool,
-  [@bs.optional] maxSize: int,
-  [@bs.optional] minSize: int,
-  [@bs.optional] multiple: bool,
-  [@bs.optional] name: string,
-  [@bs.optional] onBlur: onBlur,
-  [@bs.optional] onClick: onClick,
-  [@bs.optional] onDragEnter: onDragEnter,
-  [@bs.optional] onDragLeave: onDragLeave,
-  [@bs.optional] onDragOver: onDragOver,
-  [@bs.optional] onDragStart: onDragStart,
-  [@bs.optional] onDrop: (array(FileReader.File.t), array(FileReader.File.t)) => unit,
-  [@bs.optional] onDropAccepted: ReactEvent.Mouse.t => unit,
-  [@bs.optional] onDropRejected: ReactEvent.Mouse.t => unit,
-  [@bs.optional] onFileDialogCancel: ReactEvent.Mouse.t => unit,
-  [@bs.optional] onFocus: onFocus,
-  [@bs.optional] onKeyDown: onKeyDown,
-  [@bs.optional] preventDropOnDocument: bool,
-};
 
 module GetInputProps = {
   type onChange = ReactEvent.Form.t => unit;
@@ -115,9 +90,9 @@ module GetInputProps = {
     ~onClick=?,
     ()
   ) => Input.js(
-    ~refKey=?refKey,
-    ~onChange=?onChange,
-    ~onClick=?onClick,
+    ~refKey?,
+    ~onChange?,
+    ~onClick?,
     ()
   ) |> fn |> Output.make;
 };
@@ -227,16 +202,16 @@ module GetRootProps = {
     ~onDrop=?,
     ()
   ) => Input.js(
-    ~refKey=?refKey,
-    ~onKeyDown=?onKeyDown,
-    ~onFocus=?onFocus,
-    ~onBlur=?onBlur,
-    ~onClick=?onClick,
-    ~onDragStart=?onDragStart,
-    ~onDragEnter=?onDragEnter,
-    ~onDragOver=?onDragOver,
-    ~onDragLeave=?onDragLeave,
-    ~onDrop=?onDrop,
+    ~refKey?,
+    ~onKeyDown?,
+    ~onFocus?,
+    ~onBlur?,
+    ~onClick?,
+    ~onDragStart?,
+    ~onDragEnter?,
+    ~onDragOver?,
+    ~onDragLeave?,
+    ~onDrop?,
     ()
   ) |> fn |> Output.make;
 };
@@ -286,10 +261,38 @@ module Children = {
 
   type t = Input.t => ReasonReact.reactElement;
 
+  type js = Input.js => ReasonReact.reactElement;
+
   let make = (||>) (Input.make);
 }
 
-let make = (
+[@bs.module "react-dropzone"] [@react.component]
+external make:
+ (
+  ~accept: accept=?,
+  ~disabled: bool=?,
+  ~maxSize: int=?,
+  ~minSize: int=?,
+  ~multiple: bool=?,
+  ~name: string=?,
+  ~onBlur: onBlur=?,
+  ~onClick: onClick=?,
+  ~onDragEnter: onDragEnter=?,
+  ~onDragLeave: onDragLeave=?,
+  ~onDragOver: onDragOver=?,
+  ~onDragStart: onDragStart=?,
+  ~onDrop: (array(FileReader.File.t), array(FileReader.File.t)) => unit=?,
+  ~onDropAccepted: ReactEvent.Mouse.t => unit=?,
+  ~onDropRejected: ReactEvent.Mouse.t => unit=?,
+  ~onFileDialogCancel: ReactEvent.Mouse.t => unit=?,
+  ~onFocus: onFocus=?,
+  ~onKeyDown: onKeyDown=?,
+  ~preventDropOnDocument: bool=?,
+  ~children: Children.js
+ ) => React.element = "default";
+
+
+let makeProps = (
   ~accept=?,
   ~disabled=?,
   ~maxSize=?,
@@ -309,30 +312,80 @@ let make = (
   ~onFocus=?,
   ~onKeyDown=?,
   ~preventDropOnDocument=?,
-  children: Children.t
-) => ReasonReact.wrapJsForReason(
-  ~reactClass,
-  ~props=props(
-    ~accept=?accept,
-    ~disabled=?disabled,
-    ~maxSize=?maxSize,
-    ~minSize=?minSize,
-    ~multiple=?multiple,
-    ~name=?name,
-    ~onBlur=?onBlur,
-    ~onClick=?onClick,
-    ~onDragEnter=?onDragEnter,
-    ~onDragLeave=?onDragLeave,
-    ~onDragOver=?onDragOver,
-    ~onDragStart=?onDragStart,
-    ~onDrop=?onDrop,
-    ~onDropAccepted=?onDropAccepted,
-    ~onDropRejected=?onDropRejected,
-    ~onFileDialogCancel=?onFileDialogCancel,
-    ~onFocus=?onFocus,
-    ~onKeyDown=?onKeyDown,
-    ~preventDropOnDocument=?preventDropOnDocument,
-    ()
-  ),
-  Children.make(children)
+  ~children
+ ) => makeProps(
+  ~accept?,
+  ~disabled?,
+  ~maxSize?,
+  ~minSize?,
+  ~multiple?,
+  ~name?,
+  ~onBlur?,
+  ~onClick?,
+  ~onDragEnter?,
+  ~onDragLeave?,
+  ~onDragOver?,
+  ~onDragStart?,
+  ~onDrop?,
+  ~onDropAccepted?,
+  ~onDropRejected?,
+  ~onFileDialogCancel?,
+  ~onFocus?,
+  ~onKeyDown?,
+  ~preventDropOnDocument?,
+  ~children=Children.make(children)
 );
+
+module Jsx2 = {
+  let component = ReasonReact.statelessComponent(__MODULE__);
+
+  let make =
+    (
+      ~accept=?,
+      ~disabled=?,
+      ~maxSize=?,
+      ~minSize=?,
+      ~multiple=?,
+      ~name=?,
+      ~onBlur=?,
+      ~onClick=?,
+      ~onDragEnter=?,
+      ~onDragLeave=?,
+      ~onDragOver=?,
+      ~onDragStart=?,
+      ~onDrop=?,
+      ~onDropAccepted=?,
+      ~onDropRejected=?,
+      ~onFileDialogCancel=?,
+      ~onFocus=?,
+      ~onKeyDown=?,
+      ~preventDropOnDocument=?,
+      children,
+    ) => ReasonReactCompat.wrapReactForReasonReact(
+      make,
+      makeProps(
+        ~accept?,
+        ~disabled?,
+        ~maxSize?,
+        ~minSize?,
+        ~multiple?,
+        ~name?,
+        ~onBlur?,
+        ~onClick?,
+        ~onDragEnter?,
+        ~onDragLeave?,
+        ~onDragOver?,
+        ~onDragStart?,
+        ~onDrop?,
+        ~onDropAccepted?,
+        ~onDropRejected?,
+        ~onFileDialogCancel?,
+        ~onFocus?,
+        ~onKeyDown?,
+        ~preventDropOnDocument?,
+        ~children,
+        (),
+      ),
+      children,
+    );
+};
