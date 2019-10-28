@@ -25,7 +25,7 @@ let make = () => {
     onDrop={(acceptedFiles, _) =>
       Js.log(("these files were dropped", acceptedFiles))
     }>
-    ...{({getInputProps, getRootProps}) => {
+    {({getInputProps, getRootProps}) => {
       let inputProps = getInputProps();
       let rootProps = getRootProps();
 
