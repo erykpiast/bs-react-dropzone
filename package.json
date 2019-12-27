@@ -1,6 +1,6 @@
 {
   "name": "bs-react-dropzone",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "ReasonML bindings for react-dropzone library",
   "main": "src/ReactDropzone.re",
   "files": [
