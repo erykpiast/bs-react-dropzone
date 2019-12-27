@@ -105,3 +105,7 @@ let make = () => {
   }
 };
 ```
+
+### Hooks
+
+Hooks are not supported right now. There is [an issue open for that](https://github.com/erykpiast/bs-react-dropzone/issues/3). PRs are welcome!
