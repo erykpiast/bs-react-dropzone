@@ -1,4 +1,4 @@
-open Utils.Function;
+open ReactDropzone__Utils;
 
 type accept =
   | Single(string)
