@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.com/erykpiast/bs-react-dropzone.svg?branch=master)](https://travis-ci.com/erykpiast/bs-react-dropzone)
 [![dependencies Status](https://david-dm.org/erykpiast/bs-react-dropzone/status.svg)](https://david-dm.org/erykpiast/bs-react-dropzone)
+[![devDependencies Status](https://david-dm.org/erykpiast/bs-react-dropzone/dev-status.svg)](https://david-dm.org/erykpiast/bs-react-dropzone?type=dev)
+[![peerDependencies Status](https://david-dm.org/erykpiast/bs-react-dropzone/peer-status.svg)](https://david-dm.org/erykpiast/bs-react-dropzone?type=peer)
 [![Greenkeeper badge](https://badges.greenkeeper.io/erykpiast/bs-react-dropzone.svg)](https://greenkeeper.io/)
 
 ReasonML bindings for [react-dropzone](https://github.com/react-dropzone/react-dropzone) library.
