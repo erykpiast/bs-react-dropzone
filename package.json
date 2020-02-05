@@ -22,11 +22,12 @@
     "url": "git+https://github.com/erykpiast/bs-react-dropzone.git"
   },
   "keywords": [
-    "reason",
-    "bucklescript",
+    "reasonml",
     "bindings",
     "react",
-    "dropzone"
+    "dropzone",
+    "drag-and-drop",
+    "reason-react"
   ],
   "author": "Eryk Napierała",
   "license": "MIT",
