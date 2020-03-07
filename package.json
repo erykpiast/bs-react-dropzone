@@ -44,7 +44,7 @@
     "@glennsl/bs-jest": "0.4.10",
     "babel-jest": "24.9.0",
     "bs-enzyme": "erykpiast/bs-enzyme#1b543e6",
-    "bs-platform": "7.1.1",
+    "bs-platform": "7.2.1",
     "enzyme-adapter-react-16": "1.15.2",
     "jest": "24.9.0",
     "react-dropzone": "10.2.1",
