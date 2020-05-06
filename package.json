@@ -49,7 +49,7 @@
     "jest": "24.9.0",
     "react-dropzone": "11.0.0",
     "reason-react": "0.7.1",
-    "standard-version": "7.1.0"
+    "standard-version": "8.0.0"
   },
   "dependencies": {
     "@zpnester/bs-filereader": "0.4.0"
