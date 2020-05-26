@@ -36,8 +36,10 @@
   },
   "homepage": "https://github.com/erykpiast/bs-react-dropzone#readme",
   "peerDependencies": {
+    "react": "16.x.x",
+    "react-dom": "16.x.x",
     "react-dropzone": "10.x.x",
-    "reason-react": "0.7.x"
+    "reason-react": "0.8.x"
   },
   "devDependencies": {
     "@babel/preset-env": "7.9.6",
@@ -47,8 +49,10 @@
     "bs-platform": "7.3.2",
     "enzyme-adapter-react-16": "1.15.2",
     "jest": "24.9.0",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
     "react-dropzone": "11.0.0",
-    "reason-react": "0.7.1",
+    "reason-react": "0.8.0",
     "standard-version": "8.0.0"
   },
   "dependencies": {
