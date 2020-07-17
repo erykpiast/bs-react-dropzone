@@ -51,7 +51,7 @@
     "jest": "24.9.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "react-dropzone": "11.0.0",
+    "react-dropzone": "11.0.2",
     "reason-react": "0.8.0",
     "standard-version": "8.0.1"
   },
