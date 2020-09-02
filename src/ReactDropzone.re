@@ -1,9 +1,5 @@
 open ReactDropzone__Utils;
 
-type accept =
-  | Single(string)
-  | Multi(array(string));
-
 [@bs.deriving abstract]
 type file = {
   lastModified: int,
@@ -21,6 +17,20 @@ type onDragEnter = ReactEvent.Mouse.t => unit;
 type onDragOver = ReactEvent.Mouse.t => unit;
 type onDragLeave = ReactEvent.Mouse.t => unit;
 type ref = Js.nullable(Dom.element) => unit;
+
+module Accept = {
+  type t = [ | `single(string) | `many(list(string))];
+
+  type js;
+
+  external makeString: string => js = "%identity";
+  external makeArray: array(string) => js = "%identity";
+
+  let make =
+    fun
+    | `single(s) => s |> makeString
+    | `many(m) => m |> Array.of_list |> makeArray;
+};
 
 module GetInputProps = {
   type onChange = ReactEvent.Form.t => unit;
@@ -269,7 +279,7 @@ module Children = {
 [@bs.module "react-dropzone"] [@react.component]
 external make:
  (
-  ~accept: accept=?,
+  ~accept: Accept.js=?,
   ~disabled: bool=?,
   ~maxSize: int=?,
   ~minSize: int=?,
@@ -313,8 +323,8 @@ let makeProps = (
   ~onKeyDown=?,
   ~preventDropOnDocument=?,
   ~children
- ) => makeProps(
-  ~accept?,
+) => makeProps(
+  ~accept=?accept <$> Accept.make,
   ~disabled?,
   ~maxSize?,
   ~minSize?,
